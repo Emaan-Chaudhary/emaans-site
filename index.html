@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emaan Chaudhary | DevOps Engineer</title>
+    <meta name="description" content="DevOps Engineer specializing in cloud infrastructure, CI/CD pipelines, and automation">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Config -->
+        </main>
+    </div>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#6A0DAD',
+                        secondary: '#8B3FB8',
+                        dark: '#FAE9E2',
+                        darker: '#F5DDD5',
+                        surface: '#F0D5CC',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* ===== COLOR VARIABLES ===== */
+        :root {
+            --bg-primary: #FAE9E2;
+            --bg-secondary: #F5DDD5;
+            --bg-tertiary: #F0D5CC;
+            --text-primary: #6A0DAD;
+            --text-secondary: #7B2DAA;
+            --text-heading: #4B0082;
+            --border-color: rgba(106, 13, 173, 0.15);
+            --border-accent: rgba(106, 13, 173, 0.3);
+        }
+        
+        html.dark-mode {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --bg-tertiary: #0f3460;
+            --text-primary: #e8d5f2;
+            --text-secondary: #c9a4d9;
+            --text-heading: #f5e6ff;
+            --border-color: rgba(200, 150, 255, 0.15);
+            --border-accent: rgba(200, 150, 255, 0.3);
+        }
+        
+        /* ===== TYPOGRAPHY SYSTEM ===== */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: 2.25rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #4B0082;
+        }
+        
+        h4 {
+            font-size: 1.125rem;
+            color: #6A0DAD;
+        }
+        
+        p {
+            color: var(--text-primary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-style: italic;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .text-lead {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #7B2DAA;
+            margin-bottom: 2rem;
+        }
+        
+        /* ===== SPACING SYSTEM ===== */
+        section {
+            padding: 5rem 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            section {
+                padding: 6rem 3rem;
+            }
+        }
+        
+        .space-y-lg { margin-bottom: 2rem; }
+        .space-section { margin-bottom: 1.5rem; }
+        
+        /* ===== GRADIENT & STYLING ===== */
+        .gradient-text {
+            background: linear-gradient(135deg, #6A0DAD 0%, #8B3FB8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-gradient {
+            background: radial-gradient(ellipse at top, #F5DDD5 0%, #FAE9E2 50%);
+        }
+        
+        .glass {
+            background: rgba(245, 221, 213, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(106, 13, 173, 0.15);
+            box-shadow: 0 8px 32px rgba(106, 13, 173, 0.08);
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .glass:hover {
+            border-color: rgba(106, 13, 173, 0.25);
+            box-shadow: 0 12px 48px rgba(106, 13, 173, 0.12);
+        }
+        
+        /* ===== SKILL CARDS ===== */
+        .skill-card {
+            transition: all 0.3s ease;
+            background: rgba(245, 221, 213, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(106, 13, 173, 0.15);
+            border-radius: 0.75rem;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(106, 13, 173, 0.15);
+            border-color: rgba(106, 13, 173, 0.3);
+        }
+        
+        .skill-card h3 {
+            color: #4B0082;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-card p {
+            color: #7B2DAA;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== PROJECT CARDS ===== */
+        .project-card {
+            transition: all 0.3s ease;
+            background: rgba(245, 221, 213, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(106, 13, 173, 0.15);
+        }
+        
+        .project-card:hover {
+            box-shadow: 0 20px 40px rgba(106, 13, 173, 0.15);
+            border-color: rgba(106, 13, 173, 0.3);
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            z-index: 10;
+            pointer-events: auto;
+        }
+        
+        .project-overlay {
+            z-index: 9;
+            pointer-events: all;
+            cursor: pointer;
+        }
+        
+        .project-card h3 {
+            color: #4B0082;
+            font-weight: 600;
+        }
+        
+        .project-card p {
+            color: #7B2DAA;
+        }
+        
+        /* ===== PROJECT MODAL CONTENT ===== */
+        .project-details-content h3 {
+            color: var(--text-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .project-details-content h4 {
+            color: var(--text-primary);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-details-content p {
+            color: var(--text-primary);
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .project-details-content ul {
+            color: var(--text-primary);
+            opacity: 0.85;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-details-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-details-content img {
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .project-details-content .glass {
+            background: var(--bg-secondary);
+            border-color: var(--border-accent);
+        }
+        
+        /* ===== BUTTONS ===== */
+        button, .button, a[class*="btn"] {
+            background: #6A0DAD;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(106, 13, 173, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        button:hover, .button:hover {
+            background: #7B2DAA;
+            box-shadow: 0 6px 20px rgba(106, 13, 173, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        button:active, .button:active {
+            transform: translateY(0);
+        }
+        
+        /* ===== LINKS ===== */
+        a {
+            color: #6A0DAD;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #7B2DAA;
+        }
+        
+        /* ===== FORM ELEMENTS ===== */
+        input, textarea, select {
+            background: #FAE9E2 !important;
+            color: #6A0DAD !important;
+            border: 2px solid rgba(106, 13, 173, 0.2) !important;
+            border-radius: 0.5rem !important;
+            padding: 0.75rem 1rem !important;
+            font-family: 'Inter', sans-serif !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            border-color: #6A0DAD !important;
+            box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1) !important;
+            outline: none !important;
+        }
+        
+        input::placeholder, textarea::placeholder {
+            color: rgba(106, 13, 173, 0.5) !important;
+        }
+        
+        /* ===== TERMINAL LINE ===== */
+        .terminal-line {
+            position: relative;
+            padding-left: 20px;
+            color: #6A0DAD;
+        }
+        
+        .terminal-line::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #7B2DAA;
+            font-weight: bold;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(106, 13, 173, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(106, 13, 173, 0.3); }
+        }
+        
+        .glow-effect {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #F5DDD5;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #6A0DAD;
+            border-radius: 10px;
+            border: 3px solid #F5DDD5;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B3FB8;
+        }
+        
+        /* ===== FOCUS STATES ===== */
+        :focus-visible {
+            outline: 2px solid #6A0DAD;
+            outline-offset: 2px;
+        }
+        
+        /* ===== SELECTION ===== */
+        ::selection {
+            background: #6A0DAD;
+            color: white;
+        }
+        
+        /* ===== TYPING EFFECT ===== */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* ===== SMOOTH TRANSITIONS ===== */
+        * {
+            transition: color 0.3s ease, background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+    <div class="min-h-screen flex md:gap-8">
+        <!-- Mobile Header -->
+        <header class="md:hidden fixed top-0 left-0 right-0 z-50 bg-darker backdrop-blur border-b border-purple-200 shadow-sm">
+            <div class="flex items-center justify-between px-4 py-3">
+                <a href="#home" class="flex items-center gap-2 text-purple-900 font-mono font-bold">
+                    <i data-lucide="terminal" class="w-5 h-5 text-primary"></i>
+                    <span>emaan.dev</span>
+                </a>
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-lg text-purple-700 hover:text-primary hover:bg-primary/10 transition">
+                        <i data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+                    <button id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false" class="p-2 rounded-lg text-purple-700 hover:text-primary hover:bg-primary/10 transition">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Overlay -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"></div>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed md:static inset-y-0 left-0 z-50 w-[320px] bg-surface/90 backdrop-blur border-r border-purple-400 overflow-y-auto flex flex-col transform -translate-x-full md:translate-x-0 transition-transform md:h-screen shadow-xl md:shadow-none">
+            <div class="p-8 flex-1">
+                <!-- Profile Section -->
+                <div class="mb-10 text-center">
+                    <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary shadow-lg mx-auto mb-6">
+                        <img src="https://avatars.githubusercontent.com/u/1234567?s=400&auto=format&fit=crop" 
+                             alt="Emaan Chaudhary" 
+                             class="w-full h-full object-cover bg-gray-700">
+                    </div>
+                    <h1 class="text-2xl font-bold text-purple-900 mb-1">Emaan Chaudhary</h1>
+                    <p class="text-purple-700 font-semibold mb-2">DevOps Engineer</p>
+                    <p class="text-sm text-purple-600">Building scalable cloud infrastructure</p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="mb-10">
+                    <h3 class="text-xs font-semibold uppercase text-purple-700 mb-4">Navigation</h3>
+                    <nav class="space-y-1" aria-label="Primary">
+                        <a href="#about" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-purple-800 hover:text-primary hover:bg-primary/5 transition">
+                            <i data-lucide="user" class="w-4 h-4"></i>
+                            <span>About</span>
+                        </a>
+                        <a href="#skills" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-purple-800 hover:text-primary hover:bg-primary/5 transition">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>Skills</span>
+                        </a>
+                        <a href="#experience" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-purple-800 hover:text-primary hover:bg-primary/5 transition">
+                            <i data-lucide="briefcase" class="w-4 h-4"></i>
+                            <span>Experience</span>
+                        </a>
+                        <a href="#projects" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-purple-800 hover:text-primary hover:bg-primary/5 transition">
+                            <i data-lucide="layers" class="w-4 h-4"></i>
+                            <span>Projects</span>
+                        </a>
+                        <a href="#certifications" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-purple-800 hover:text-primary hover:bg-primary/5 transition">
+                            <i data-lucide="badge-check" class="w-4 h-4"></i>
+                            <span>Certifications</span>
+                        </a>
+                        <a href="#contact" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-purple-800 hover:text-primary hover:bg-primary/5 transition">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>Contact</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="mb-10">
+                    <h3 class="text-xs font-semibold uppercase text-purple-700 mb-4">Contact</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-4 h-4 text-purple-600"></i>
+                            <a href="mailto:emaan@example.com" class="text-sm text-purple-800 hover:text-primary transition">emaan@example.com</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="linkedin" class="w-4 h-4 text-purple-600"></i>
+                            <a href="https://linkedin.com" target="_blank" class="text-sm text-purple-800 hover:text-primary transition">LinkedIn Profile</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="github" class="w-4 h-4 text-purple-600"></i>
+                            <a href="https://github.com" target="_blank" class="text-sm text-purple-800 hover:text-primary transition">GitHub Profile</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="twitter" class="w-4 h-4 text-purple-600"></i>
+                            <a href="https://twitter.com" target="_blank" class="text-sm text-purple-800 hover:text-primary transition">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Resume Button -->
+            <div class="p-8 border-t border-purple-300/50 bg-darker/40 space-y-3">
+                <button id="sidebar-theme-toggle" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-purple-400/50 text-purple-800 hover:bg-primary/10 hover:text-primary transition text-sm font-medium">
+                    <i data-lucide="moon" class="w-4 h-4"></i>
+                    <span>Dark Mode</span>
+                </button>
+                <a href="#contact" class="w-full bg-primary hover:bg-secondary transition-colors text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    <span>Download Resume</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="flex-1 pt-16 md:pt-0 overflow-y-auto md:h-screen">
+
+    <!-- About Section -->
+    <section id="about" class="bg-dark relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-2xl opacity-30"></div>
+                    <div class="relative glass rounded-2xl p-8 border border-purple-200">
+                        <div class="font-mono text-sm text-purple-700 mb-4">$ cat about-me.txt</div>
+                        <div class="space-y-3 font-mono text-sm">                            <div class="terminal-line text-green-600">name: "Emaan Chaudhary"</div>
+                            <div class="terminal-line text-blue-600">role: "DevOps Engineer"</div>
+                            <div class="terminal-line text-purple-600">location: "Your Location"</div>
+                            <div class="terminal-line text-yellow-600">experience: "5+ years"</div>
+                            <div class="terminal-line text-pink-600">focus: ["Cloud", "Automation", "CI/CD"]</div>
+                            <div class="terminal-line text-purple-600">hobbies: ["Problem Solving", "Open Source", "Coffee"]</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-purple-900">About Me</h2>
+                    <div class="space-y-6 text-purple-800">
+                        <p class="leading-relaxed">
+                            I'm a passionate DevOps Engineer with over 5 years of experience in designing, implementing, 
+                            and managing cloud infrastructure. I specialize in bridging the gap between development and 
+                            operations teams by automating workflows and implementing robust CI/CD pipelines.
+                        </p>
+                        <p class="leading-relaxed">
+                            My expertise spans across major cloud platforms including AWS, Azure, and GCP, with deep 
+                            knowledge of containerization technologies like Docker and Kubernetes. I believe in 
+                            infrastructure as code and have successfully implemented Terraform and CloudFormation 
+                            solutions for multiple enterprise clients.
+                        </p>
+                        <p class="leading-relaxed">
+                            When I'm not optimizing deployments or troubleshooting infrastructure, you'll find me 
+                            contributing to open-source projects, writing technical blogs, or exploring new DevOps tools 
+                            and methodologies.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="glass rounded-lg p-4 border border-purple-200 hover:shadow-lg transition-all duration-300">
+                            <div class="text-3xl font-bold text-primary mb-1">50+</div>
+                            <div class="text-sm text-purple-700 font-medium">Projects Completed</div>
+                        </div>
+                        <div class="glass rounded-lg p-4 border border-purple-200 hover:shadow-lg transition-all duration-300">
+                            <div class="text-3xl font-bold text-secondary mb-1">99.9%</div>
+                            <div class="text-sm text-purple-700 font-medium">Uptime Achieved</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-darker relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-purple-900">Technical Skills</h2>
+                <p class="text-lg text-purple-700 max-w-2xl mx-auto leading-relaxed">Tools and technologies I use to build scalable and reliable infrastructure</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Cloud Platforms -->
+                <div class="skill-card glass rounded-xl p-6 border border-purple-200 transition-all duration-300 hover:shadow-xl">
+                    <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="cloud" class="w-6 h-6 text-orange-500"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-purple-900">AWS</h3>
+                    <p class="text-sm text-purple-700">EC2, S3, Lambda, RDS, EKS</p>
+                </div>
+                
+                <div class="skill-card glass rounded-xl p-6 border border-purple-200 transition-all duration-300 hover:shadow-xl">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="container" class="w-6 h-6 text-blue-500"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-purple-900">Docker</h3>
+                    <p class="text-sm text-purple-700">Containerization, Docker Compose</p>
+                </div>
+                
+                <div class="skill-card glass rounded-xl p-6 border border-purple-200 transition-all duration-300 hover:shadow-xl">
+                    <div class="w-12 h-12 bg-blue-400/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="boxes" class="w-6 h-6 text-blue-400"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-purple-900">Kubernetes</h3>
+                    <p class="text-sm text-purple-700">K8s, Helm, Cluster Management</p>
+                </div>
+                
+                <div class="skill-card glass rounded-xl p-6 border border-purple-200 transition-all duration-300 hover:shadow-xl">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="git-branch" class="w-6 h-6 text-purple-500"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-purple-900">CI/CD</h3>
+                    <p class="text-sm text-purple-700">Jenkins, GitLab CI, GitHub Actions</p>
+                </div>
+                
+                <div class="skill-card glass rounded-xl p-6 border border-purple-200 transition-all duration-300 hover:shadow-xl">
+                    <div class="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="code-2" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-purple-900">Terraform</h3>
+                    <p class="text-sm text-purple-700">IaC, State Management, Modules</p>
+                </div>
+                
+                <div class="skill-card glass rounded-xl p-6 border border-purple-200 transition-all duration-300 hover:shadow-xl">
+                    <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="monitor" class="w-6 h-6 text-red-500"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-purple-900">Monitoring</h3>
+                    <p class="text-sm text-purple-700">Prometheus, Grafana, ELK Stack</p>
+                </div>
+                
+                <div class="skill-card glass rounded-xl p-6 border border-purple-200 transition-all duration-300 hover:shadow-xl">
+                    <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="terminal" class="w-6 h-6 text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-purple-900">Scripting</h3>
+                    <p class="text-sm text-purple-700">Bash, Python, PowerShell</p>
+                </div>
+                
+                <div class="skill-card glass rounded-xl p-6 border border-purple-200 transition-all duration-300 hover:shadow-xl">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="shield" class="w-6 h-6 text-green-500"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2 text-purple-900">Security</h3>
+                    <p class="text-sm text-purple-700">Vault, Trivy, Security Scanning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="bg-dark relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-purple-900">Work Experience</h2>
+                <p class="text-lg text-purple-700">My professional journey in the DevOps landscape</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary to-secondary"></div>
+                
+                <!-- Experience 1 -->
+                <div class="relative mb-12 md:flex items-center justify-between group">
+                    <div class="md:w-5/12 mb-4 md:mb-0 md:text-right md:pr-8">
+                        <div class="glass rounded-xl p-6 border border-purple-200 hover:border-primary transition-colors hover:shadow-lg">
+                            <h3 class="text-xl font-bold mb-1 text-purple-900">AWS re/Start Cloud Trainee</h3>
+                            <p class="text-primary font-semibold mb-2">AWS re/Start Viet Nam</p>
+                            <p class="text-purple-700 text-sm mb-2">Feb 2026 - Present · 1 mo</p>
+                            <p class="text-purple-600 text-xs mb-4">Apprenticeship · Hybrid</p>
+                            <ul class="text-sm text-purple-700 space-y-2 md:text-right">
+                                <li>• Engaged in hands-on training focusing on foundational cloud computing skills</li>
+                                <li>• Developed practical experience in cloud technologies</li>
+                                <li>• Collaborated with peers to enhance technical knowledge and problem-solving abilities</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4 md:justify-end">
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full font-medium">Cloud Computing</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full font-medium">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-dark z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="md:w-5/12 md:pl-8"></div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="relative md:flex items-center justify-between group">
+                    <div class="md:w-5/12 mb-4 md:mb-0 md:pr-8"></div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-dark z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="md:w-5/12 md:pl-8">
+                        <div class="glass rounded-xl p-6 border border-purple-200 hover:border-secondary transition-colors hover:shadow-lg">
+                            <h3 class="text-xl font-bold mb-1 text-purple-900">Cloud Engineer</h3>
+                            <p class="text-secondary font-semibold mb-2">Big Success Family</p>
+                            <p class="text-purple-700 text-sm mb-2">Sep 2025 - Jan 2026 · 5 mos</p>
+                            <p class="text-purple-600 text-xs mb-4">Part-time · Islamabad, Pakistan · Hybrid</p>
+                            <ul class="text-sm text-purple-700 space-y-2">
+                                <li>• Assisted with AWS resources including EC2, S3, IAM, and VPC</li>
+                                <li>• Supported cloud application deployment and monitoring</li>
+                                <li>• Worked with senior engineers on infrastructure planning</li>
+                                <li>• Practiced AWS security and cost-optimization fundamentals</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-2 py-1 bg-secondary/20 text-secondary text-xs rounded-full font-medium">AWS</span>
+                                <span class="px-2 py-1 bg-secondary/20 text-secondary text-xs rounded-full font-medium">Cloud Computing</span>
+                                <span class="px-2 py-1 bg-secondary/20 text-secondary text-xs rounded-full font-medium">DevOps</span>
+                                <span class="px-2 py-1 bg-secondary/20 text-secondary text-xs rounded-full font-medium">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-darker relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-purple-900">Featured Projects</h2>
+                <p class="text-lg text-purple-700">Some of my recent implementations</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->                <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl" data-project="serverless-form">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                        <i data-lucide="server" class="w-16 h-16 text-white/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-purple-900">Serverless Form Web App</h3>
+                        <p class="text-purple-700 text-sm mb-4">Built a fully serverless backend using Lambda, API Gateway, and DynamoDB with event-driven, scalable architecture and IAM security.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-medium">Lambda</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-medium">API Gateway</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-medium">DynamoDB</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/Emaan-Chaudhary/aws-serverless-form-app" target="_blank" class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+                        <span class="text-white font-semibold">View on GitHub →</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl" data-project="three-tier">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                        <i data-lucide="layers" class="w-16 h-16 text-white/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-purple-900">Three-Tier Serverless App</h3>
+                        <p class="text-purple-700 text-sm mb-4">Designed three-tier architecture separating frontend, backend, and database. Deployed frontend on S3 with CloudFront distribution.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-600 text-xs rounded-full font-medium">S3</span>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-600 text-xs rounded-full font-medium">CloudFront</span>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-600 text-xs rounded-full font-medium">Lambda</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/Emaan-Chaudhary/aws-three-tier-web-app" target="_blank" class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-orange-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+                        <span class="text-white font-semibold">View on GitHub →</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl" data-project="auto-scaling">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                        <i data-lucide="trending-up" class="w-16 h-16 text-white/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-purple-900">Auto-Scaling Web App</h3>
+                        <p class="text-purple-700 text-sm mb-4">Implemented load-balanced EC2 infrastructure with Auto Scaling, CloudWatch monitoring and health checks for high availability.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-green-500/20 text-green-600 text-xs rounded-full font-medium">EC2</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-600 text-xs rounded-full font-medium">ALB</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-600 text-xs rounded-full font-medium">CloudWatch</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app" target="_blank" class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-green-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+                        <span class="text-white font-semibold">View on GitHub →</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl" data-project="vpc-peering">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                        <i data-lucide="network" class="w-16 h-16 text-white/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-purple-900">VPC Peering Network</h3>
+                        <p class="text-purple-700 text-sm mb-4">Implemented same-region VPC peering for secure EC2 communication. Performed CIDR planning and route table configuration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-600 text-xs rounded-full font-medium">VPC Peering</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-600 text-xs rounded-full font-medium">Route Tables</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-600 text-xs rounded-full font-medium">Networking</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/Emaan-Chaudhary/aws-same-region-vpc-peering" target="_blank" class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-purple-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+                        <span class="text-white font-semibold">View on GitHub →</span>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl" data-project="cicd-pipeline">
+                    <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                        <i data-lucide="git-branch" class="w-16 h-16 text-white/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-purple-900">CI/CD Pipeline for Java</h3>
+                        <p class="text-purple-700 text-sm mb-4">Built CI/CD pipeline using CodePipeline, CodeBuild, and CodeDeploy. Automated build and deployment to EC2 instances.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-600 text-xs rounded-full font-medium">CodePipeline</span>
+                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-600 text-xs rounded-full font-medium">CodeBuild</span>
+                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-600 text-xs rounded-full font-medium">CodeDeploy</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/Emaan-Chaudhary/aws-java-cicd-pipeline" target="_blank" class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-cyan-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+                        <span class="text-white font-semibold">View on GitHub →</span>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl" data-project="s3-vpc">
+                    <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
+                        <i data-lucide="shield" class="w-16 h-16 text-white/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-purple-900">Private S3 VPC Access</h3>
+                        <p class="text-purple-700 text-sm mb-4">Enabled private S3 access without internet gateway or NAT. Designed secure and cost-optimized VPC architecture.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-600 text-xs rounded-full font-medium">VPC</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-600 text-xs rounded-full font-medium">S3</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-600 text-xs rounded-full font-medium">Gateway Endpoint</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/Emaan-Chaudhary/aws-s3-vpc-endpoint" target="_blank" class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-yellow-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+                        <span class="text-white font-semibold">View on GitHub →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="bg-dark relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-purple-900">Certifications & Badges</h2>
+                <p class="text-lg text-purple-700">AWS Educate training badges verified by Credly</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <!-- Badge 1 - Databases -->
+                <div class="glass rounded-2xl border border-purple-200 p-6 shadow-sm hover:shadow-xl hover:border-primary transition-all duration-300 group">
+                    <div class="flex justify-center mb-4">
+                        <img src="badges/database.png" 
+                             alt="AWS Educate Getting Started with Databases" 
+                             class="w-24 h-24 object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h3 class="text-base font-semibold text-purple-900 text-center leading-snug">AWS Educate Getting Started with Databases</h3>
+                    <p class="text-sm text-purple-700 text-center mt-1 mb-6">Amazon Web Services</p>
+                    <div class="flex justify-center">
+                        <a href="https://www.credly.com/badges/51272e62-ae42-4f3c-8f7a-0cdcde5f73a2/public_url" target="_blank" class="flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition">
+                            <img src="https://www.svgrepo.com/show/331358/credly.svg" alt="Credly" class="w-5 h-5" /> Verify
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Badge 2 - Compute -->
+                <div class="glass rounded-2xl border border-purple-200 p-6 shadow-sm hover:shadow-xl hover:border-primary transition-all duration-300 group">
+                    <div class="flex justify-center mb-4">
+                        <img src="badges/compute.png" 
+                             alt="AWS Educate Getting Started with Compute" 
+                             class="w-24 h-24 object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h3 class="text-base font-semibold text-purple-900 text-center leading-snug">AWS Educate Getting Started with Compute</h3>
+                    <p class="text-sm text-purple-700 text-center mt-1 mb-6">Amazon Web Services</p>
+                    <div class="flex justify-center">
+                        <a href="https://www.credly.com/badges/fdcd7d69-5277-42bc-ba4e-b0203b5b959e/public_url" target="_blank" class="flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition">
+                            <img src="https://www.svgrepo.com/show/331358/credly.svg" alt="Credly" class="w-5 h-5" /> Verify
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Badge 3 - Storage -->
+                <div class="glass rounded-2xl border border-purple-200 p-6 shadow-sm hover:shadow-xl hover:border-primary transition-all duration-300 group">
+                    <div class="flex justify-center mb-4">
+                        <img src="badges/storage.png" 
+                             alt="AWS Educate Getting Started with Storage" 
+                             class="w-24 h-24 object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h3 class="text-base font-semibold text-purple-900 text-center leading-snug">AWS Educate Getting Started with Storage</h3>
+                    <p class="text-sm text-purple-700 text-center mt-1 mb-6">Amazon Web Services</p>
+                    <div class="flex justify-center">
+                        <a href="https://www.credly.com/badges/0894279d-e98e-48cb-9b83-3ae5df1af3af/public_url" target="_blank" class="flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition">
+                            <img src="https://www.svgrepo.com/show/331358/credly.svg" alt="Credly" class="w-5 h-5" /> Verify
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Badge 4 - Networking -->
+                <div class="glass rounded-2xl border border-purple-200 p-6 shadow-sm hover:shadow-xl hover:border-primary transition-all duration-300 group">
+                    <div class="flex justify-center mb-4">
+                        <img src="badges/networking.png"
+                             alt="AWS Educate Getting Started with Networking"
+                             class="w-24 h-24 object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h3 class="text-base font-semibold text-purple-900 text-center leading-snug">AWS Educate Getting Started with Networking</h3>
+                    <p class="text-sm text-purple-700 text-center mt-1 mb-6">Amazon Web Services</p>
+                    <div class="flex justify-center">
+                        <a href="https://www.credly.com/badges/a31c7e2d-52f7-4c8e-ac8e-559e14e5dd70/public_url" target="_blank" class="flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition">
+                            <img src="https://www.svgrepo.com/show/331358/credly.svg" alt="Credly" class="w-5 h-5" /> Verify
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Badge 5 - Cloud 101 -->
+                <div class="glass rounded-2xl border border-purple-200 p-6 shadow-sm hover:shadow-xl hover:border-primary transition-all duration-300 group">
+                    <div class="flex justify-center mb-4">
+                        <img src="badges/cloud-101.png" 
+                             alt="AWS Educate Introduction to Cloud 101" 
+                             class="w-24 h-24 object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h3 class="text-base font-semibold text-purple-900 text-center leading-snug">AWS Educate Introduction to Cloud 101</h3>
+                    <p class="text-sm text-purple-700 text-center mt-1 mb-6">Amazon Web Services</p>
+                    <div class="flex justify-center">
+                        <a href="https://www.credly.com/badges/8d67bbf4-128b-4141-b5f1-1bc61bbfbaa6/public_url" target="_blank" class="flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition">
+                            <img src="https://www.svgrepo.com/show/331358/credly.svg" alt="Credly" class="w-5 h-5" /> Verify
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-dark relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-purple-900">Get In Touch</h2>
+                <p class="text-lg text-purple-700">Have a project in mind or want to collaborate? Let's talk!</p>
+            </div>
+            
+            <div class="glass rounded-2xl p-8 md:p-12 border border-purple-200">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-purple-800 mb-2">Name</label>
+                            <input type="text" required class="w-full px-4 py-3 bg-dark border border-purple-200 rounded-lg focus:border-primary focus:outline-none text-purple-900 placeholder-purple-500" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-purple-800 mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 bg-dark border border-purple-200 rounded-lg focus:border-primary focus:outline-none text-purple-900 placeholder-purple-500" placeholder="john@example.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-purple-800 mb-2">Subject</label>
+                        <input type="text" required class="w-full px-4 py-3 bg-dark border border-purple-200 rounded-lg focus:border-primary focus:outline-none text-purple-900 placeholder-purple-500" placeholder="Project Collaboration">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-purple-800 mb-2">Message</label>
+                        <textarea rows="5" required class="w-full px-4 py-3 bg-dark border border-purple-200 rounded-lg focus:border-primary focus:outline-none text-purple-900 placeholder-purple-500 resize-none" placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-4 bg-primary hover:bg-secondary transition-all rounded-lg font-semibold text-white flex items-center justify-center gap-2">
+                        <span>Send Message</span>
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                    </button>
+                </form>
+                
+                <div class="mt-8 pt-8 border-t border-purple-200 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-2 text-purple-800 font-medium">
+                        <i data-lucide="mail" class="w-5 h-5 text-primary"></i>
+                        <span>emaan@example.com</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark border border-purple-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors text-purple-700">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark border border-purple-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors text-purple-700">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark border border-purple-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors text-purple-700">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-dark border-t border-purple-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <i data-lucide="terminal" class="w-5 h-5 text-primary"></i>
+                <span class="font-mono font-semibold text-purple-900">emaan.dev</span>
+            </div>
+            <p class="text-purple-700 text-sm font-medium">© 2024 Emaan Chaudhary. All rights reserved.</p>
+            <p class="text-purple-600 text-sm font-mono">Built with passion & coffee ☕</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary rounded-full flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-secondary z-40 shadow-lg">
+        <i data-lucide="chevron-up" class="w-6 h-6 text-white"></i>
+    </button>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 items-center justify-center p-4" style="display: none;">
+        <div class="glass rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto border border-purple-200" style="background-color: var(--bg-primary);">
+            <div class="sticky top-0 glass border-b border-purple-200 p-6 flex justify-between items-center" style="background-color: var(--bg-secondary);">
+                <h2 id="modal-title" class="text-2xl font-bold" style="color: var(--text-heading);"></h2>
+                <button id="close-modal" class="w-10 h-10 rounded-full hover:bg-primary/20 transition-colors flex items-center justify-center" style="color: var(--text-primary);">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div id="modal-content" class="p-8" style="color: var(--text-primary);">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Typing Effect
+        const typingText = document.getElementById('typing-text');
+        const phrases = [
+            'DevOps Engineer',
+            'Cloud Architect',
+            'Automation Expert',
+            'CI/CD Specialist',
+            'Infrastructure as Code'
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        
+        function typeEffect() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                typingSpeed = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typingSpeed = 500; // Pause before new word
+            }
+            
+            setTimeout(typeEffect, typingSpeed);
+        }
+        
+        typeEffect();
+        
+        // Sidebar layout replaces top navbar and mobile menu
+        
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 500) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Create notification
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-xl z-50 flex items-center gap-3 transform translate-x-full transition-transform duration-300';
+            notification.innerHTML = `
+                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                <span>Message sent successfully!</span>
+            `;
+            
+            document.body.appendChild(notification);
+            lucide.createIcons();
+            
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Animate out after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+            
+            contactForm.reset();
+        });
+        
+        // Intersection Observer for Fade-in Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards and sections
+        document.querySelectorAll('.skill-card, .project-card, .glass').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+        
+        // Project Modal Functionality
+        const projectModal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('close-modal');
+        
+        const projectData = {
+            'serverless-form': {
+                title: 'Serverless Form Web Application on AWS',
+                github: 'https://github.com/Emaan-Chaudhary/aws-serverless-form-app',
+                description: 'A fully serverless web application built on AWS that handles user form submissions and stores the data in DynamoDB.',
+                architecture: 'https://raw.githubusercontent.com/Emaan-Chaudhary/aws-serverless-form-app/main/images/s1.png',
+                details: `
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Architecture Overview</h3>
+                    <p class="text-gray-400 mb-6">Flow: API Gateway → Lambda → DynamoDB</p>
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-serverless-form-app/main/images/s1.png" alt="Architecture" class="w-full rounded-lg mb-6">
+                    
+                    <h3 class="text-xl font-bold mb-3">Tech Stack</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
+                        <li>AWS Lambda (Python)</li>
+                        <li>API Gateway</li>
+                        <li>DynamoDB</li>
+                        <li>IAM Roles for secure access</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold mb-3">Key Features</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
+                        <li>Fully serverless architecture</li>
+                        <li>Event-driven, scalable design</li>
+                        <li>Pay-per-use pricing model</li>
+                        <li>No server management required</li>
+                    </ul>
+                    
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-serverless-form-app/main/images/s5.png" alt="Form Page" class="w-full rounded-lg mb-4">
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-serverless-form-app/main/images/s6.png" alt="DynamoDB Data" class="w-full rounded-lg">
+                `
+            },
+            'three-tier': {
+                title: 'Three-Tier Web Application on AWS',
+                github: 'https://github.com/Emaan-Chaudhary/aws-three-tier-web-app',
+                description: 'A three-tier web application on AWS with S3 + CloudFront for frontend, Lambda + API Gateway for backend, and DynamoDB as database.',
+                architecture: 'https://raw.githubusercontent.com/Emaan-Chaudhary/aws-three-tier-web-app/main/architecture/threetier-arc.png',
+                details: `
+                    <h3 class="text-2xl font-bold mb-4 text-orange-500">Architecture Overview</h3>
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-three-tier-web-app/main/architecture/threetier-arc.png" alt="Architecture" class="w-full rounded-lg mb-6">
+                    
+                    <h3 class="text-xl font-bold mb-3">Architecture Tiers</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-blue-400 mb-2">🔹 Presentation Tier</h4>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Amazon S3 – Hosts static website files</li>
+                                <li>Amazon CloudFront – Global CDN for fast content delivery</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-purple-400 mb-2">🔹 Logic Tier</h4>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Amazon API Gateway – Exposes REST APIs</li>
+                                <li>AWS Lambda (Node.js) – Handles business logic</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-green-400 mb-2">🔹 Data Tier</h4>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Amazon DynamoDB – NoSQL database for storing user data</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-3">Key Features</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
+                        <li>Global website delivery using CloudFront</li>
+                        <li>Serverless backend using Lambda</li>
+                        <li>REST API integration with API Gateway</li>
+                        <li>Secure and scalable NoSQL data storage</li>
+                        <li>CORS-enabled API for browser access</li>
+                    </ul>
+                    
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-three-tier-web-app/main/architecture/output2.png" alt="Final Result" class="w-full rounded-lg">
+                `
+            },
+            'auto-scaling': {
+                title: 'Highly Available Web Application using AWS ALB & Auto Scaling',
+                github: 'https://github.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app',
+                description: 'AWS architecture showcasing load balancing, auto scaling, private EC2 instances, and monitoring.',
+                architecture: 'https://raw.githubusercontent.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app/main/architecture/FinalArchitecture.png',
+                details: `
+                    <h3 class="text-2xl font-bold mb-4 text-green-500">Problem Statement</h3>
+                    <p class="text-gray-400 mb-6">Single EC2 instances are not reliable for production workloads. If the instance fails or traffic spikes, the application becomes unavailable. This project demonstrates how to design a highly available, scalable, and monitored web application on AWS.</p>
+                    
+                    <h3 class="text-xl font-bold mb-3">Architecture Overview</h3>
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app/main/architecture/FinalArchitecture.png" alt="Architecture" class="w-full rounded-lg mb-6">
+                    
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
+                        <li>Application Load Balancer exposed to the internet</li>
+                        <li>EC2 instances running in private subnets for security</li>
+                        <li>Auto Scaling Group maintains desired capacity</li>
+                        <li>CloudWatch alarms trigger scale-in and scale-out</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold mb-3">Key Design Decisions</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-blue-400 mb-2">Why Load Balancer is in Public Subnets</h4>
+                            <p class="text-gray-400">The ALB must receive traffic from the internet. Private subnets cannot be directly accessed from outside the VPC.</p>
+                        </div>
+                        
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-purple-400 mb-2">Why EC2 Instances are in Private Subnets</h4>
+                            <p class="text-gray-400">To reduce attack surface. Instances are accessed only via the ALB or AWS Systems Manager.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-3">Auto Scaling & Monitoring</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
+                        <li>Target tracking policy based on average CPU utilization (50%)</li>
+                        <li>Scale-out when CPU increases</li>
+                        <li>Scale-in when traffic reduces</li>
+                        <li>CloudWatch alarms automatically created by ASG</li>
+                    </ul>
+                    
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app/main/screenshots/cloudwatch.png" alt="CloudWatch" class="w-full rounded-lg mb-4">
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app/main/screenshots/asg.png" alt="Auto Scaling Group" class="w-full rounded-lg">
+                `
+            },
+            'vpc-peering': {
+                title: 'Same Region VPC Peering',
+                github: 'https://github.com/Emaan-Chaudhary/aws-same-region-vpc-peering',
+                description: 'AWS VPC Peering implementation enabling private communication between EC2 instances in separate VPCs.',
+                architecture: 'https://raw.githubusercontent.com/Emaan-Chaudhary/aws-same-region-vpc-peering/main/images/infra.png',
+                details: `
+                    <h3 class="text-2xl font-bold mb-4 text-purple-500">Project Overview</h3>
+                    <p class="text-gray-400 mb-6">This project demonstrates how to create a VPC Peering connection within the same AWS region and enable private communication between EC2 instances across different VPCs.</p>
+                    
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-same-region-vpc-peering/main/images/infra.png" alt="Architecture" class="w-full rounded-lg mb-6">
+                    
+                    <h3 class="text-xl font-bold mb-3">Architecture Components</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
+                        <li>Two VPCs in the same AWS region (us-east-1)</li>
+                        <li>Separate CIDR blocks</li>
+                        <li>EC2 instances deployed in private subnets</li>
+                        <li>VPC Peering connection established</li>
+                        <li>Route tables updated to allow inter-VPC traffic</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold mb-3">Architecture Summary</h3>
+                    <div class="glass p-4 rounded-lg border border-gray-700 mb-6">
+                        <table class="w-full text-gray-400 text-sm">
+                            <tr><td class="py-1 font-semibold">VPC-1A CIDR:</td><td>10.75.0.0/16</td></tr>
+                            <tr><td class="py-1 font-semibold">VPC-1B CIDR:</td><td>192.168.0.0/16</td></tr>
+                            <tr><td class="py-1 font-semibold">Region:</td><td>us-east-1</td></tr>
+                        </table>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-3">Implementation Steps</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-blue-400 mb-2">1️⃣ Create VPC-1A</h4>
+                            <p class="text-gray-400 text-sm">Region: us-east-1 | CIDR: 10.75.0.0/16 | 1 Public + 1 Private subnet | NAT Gateway enabled</p>
+                        </div>
+                        
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-purple-400 mb-2">2️⃣ Create VPC-1B</h4>
+                            <p class="text-gray-400 text-sm">Region: us-east-1 | CIDR: 192.168.0.0/16 | 1 Public + 1 Private subnet | NAT Gateway enabled</p>
+                        </div>
+                        
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-green-400 mb-2">3️⃣ Launch EC2 Instances</h4>
+                            <p class="text-gray-400 text-sm">Jump Server in VPC-1A public subnet | Private EC2 instances in both VPCs</p>
+                        </div>
+                        
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-yellow-400 mb-2">4️⃣ Test Connectivity (Before Peering)</h4>
+                            <p class="text-gray-400 text-sm">Ping Private-EC2-1a ✅ | Ping Private-EC2-1b ❌ (No routing)</p>
+                        </div>
+                        
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-pink-400 mb-2">5️⃣ Create VPC Peering Connection</h4>
+                            <p class="text-gray-400 text-sm">Requester: VPC-1A | Accepter: VPC-1B | Accept peering request</p>
+                        </div>
+                        
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-cyan-400 mb-2">6️⃣ Update Route Tables</h4>
+                            <p class="text-gray-400 text-sm">Add routes pointing to VPC Peering connection in both VPCs</p>
+                        </div>
+                    </div>
+                    
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-same-region-vpc-peering/main/images/vpc-peering.png" alt="VPC Peering" class="w-full rounded-lg mb-4">
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-same-region-vpc-peering/main/images/result.png" alt="Result" class="w-full rounded-lg mb-6">
+                    
+                    <h3 class="text-xl font-bold mb-3">✅ Result</h3>
+                    <p class="text-gray-400 mb-6">The two VPCs can now communicate privately over AWS's internal network without using the internet.</p>
+                    
+                    <h3 class="text-xl font-bold mb-3">⚠️ Important Notes</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
+                        <li>VPC Peering does not support transitive routing</li>
+                        <li>CIDR blocks must not overlap</li>
+                        <li>Security groups and NACLs must allow traffic</li>
+                        <li>DNS resolution between VPCs requires additional configuration</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold mb-3">📚 Learning Outcome</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Understand VPC Peering architecture</li>
+                        <li>Configure routing between isolated networks</li>
+                        <li>Debug network connectivity issues in AWS</li>
+                    </ul>
+                `
+            },
+            'cicd-pipeline': {
+                title: 'Automated Java Web Application Deployment using AWS CI/CD',
+                github: 'https://github.com/Emaan-Chaudhary/aws-java-cicd-pipeline',
+                description: 'Fully automated CI/CD pipeline for a Java web application using AWS Developer Tools.',
+                architecture: 'https://github.com/Emaan-Chaudhary/nextwork-web-project/blob/master/images/0.png?raw=true',
+                details: `
+                    <h3 class="text-2xl font-bold mb-4 text-cyan-500">Project Overview</h3>
+                    <p class="text-gray-400 mb-6">End-to-end deployment workflow where source code is fetched from GitHub, built using AWS CodeBuild, stored in Amazon S3, and deployed to an EC2 web server using AWS CodeDeploy. Infrastructure provisioning is handled using AWS CloudFormation.</p>
+                    
+                    <img src="https://github.com/Emaan-Chaudhary/nextwork-web-project/blob/master/images/0.png?raw=true" alt="Architecture" class="w-full rounded-lg mb-6">
+                    
+                    <h3 class="text-xl font-bold mb-3">AWS Services Used</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
+                        <li>GitHub – Source code repository</li>
+                        <li>AWS CodePipeline – Orchestrates the CI/CD workflow</li>
+                        <li>AWS CodeBuild – Builds the Java application</li>
+                        <li>AWS CodeDeploy – Deploys the application to EC2</li>
+                        <li>Amazon S3 – Stores build artifacts</li>
+                        <li>AWS CloudFormation – Infrastructure as Code</li>
+                        <li>Amazon EC2 – Hosts the Java web application</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold mb-3">CI/CD Pipeline Flow</h3>
+                    <ol class="list-decimal list-inside text-gray-400 space-y-2 mb-6">
+                        <li>Code is pushed to the GitHub repository</li>
+                        <li>AWS CodePipeline is automatically triggered</li>
+                        <li>CodeBuild compiles and packages the Java application</li>
+                        <li>Build artifacts are stored in an S3 bucket</li>
+                        <li>CodeDeploy deploys the application to an EC2 instance</li>
+                        <li>Application becomes live on the web server</li>
+                    </ol>
+                    
+                    <img src="https://github.com/Emaan-Chaudhary/nextwork-web-project/blob/master/images/2.png?raw=true" alt="Pipeline Flow" class="w-full rounded-lg mb-4">
+                    
+                    <h3 class="text-xl font-bold mb-3">Key Features</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Fully automated build and deployment</li>
+                        <li>No manual intervention required</li>
+                        <li>Infrastructure created using CloudFormation</li>
+                        <li>CI/CD triggered on code push</li>
+                        <li>Production-ready deployment workflow</li>
+                    </ul>
+                `
+            },
+            's3-vpc': {
+                title: 'Secure Private Access to Amazon S3 Using VPC Endpoint',
+                github: 'https://github.com/Emaan-Chaudhary/aws-s3-vpc-endpoint',
+                description: 'Secure, private access to Amazon S3 using a Gateway VPC Endpoint, eliminating public internet exposure.',
+                architecture: 'https://raw.githubusercontent.com/Emaan-Chaudhary/aws-s3-vpc-endpoint/main/screenshots/endpoint-arc.png',
+                details: `
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-500">Problem Statement</h3>
+                    <p class="text-gray-400 mb-6">In many AWS architectures, private workloads need access to S3. The default approach routes traffic through the public internet using an Internet Gateway or NAT Gateway, which introduces unnecessary internet exposure, higher costs, and weaker security boundaries.</p>
+                    
+                    <h3 class="text-xl font-bold mb-3">Solution Overview</h3>
+                    <p class="text-gray-400 mb-6">Uses an Amazon S3 Gateway VPC Endpoint to provide private, direct connectivity between a VPC and Amazon S3. Access to the S3 bucket is further restricted using a bucket policy that only allows requests originating from the specific VPC endpoint.</p>
+                    
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-s3-vpc-endpoint/main/screenshots/endpoint-arc.png" alt="Architecture" class="w-full rounded-lg mb-6">
+                    
+                    <h3 class="text-xl font-bold mb-3">Architecture Components</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
+                        <li>Custom Amazon VPC</li>
+                        <li>Public Subnet (single Availability Zone)</li>
+                        <li>EC2 instance running Amazon Linux</li>
+                        <li>Amazon S3 bucket</li>
+                        <li>S3 Gateway VPC Endpoint</li>
+                        <li>Route table–based S3 routing</li>
+                        <li>Restrictive S3 bucket policy</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold mb-3">Traffic Flow</h3>
+                    <div class="glass p-4 rounded-lg border border-gray-700 mb-6">
+                        <pre class="text-gray-400">EC2 Instance
+   ↓
+VPC Route Table (S3 Prefix List)
+   ↓
+S3 Gateway VPC Endpoint
+   ↓
+Amazon S3</pre>
+                    </div>
+                    
+                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-s3-vpc-endpoint/main/screenshots/vpc.png" alt="VPC" class="w-full rounded-lg mb-4">
+                    
+                    <h3 class="text-xl font-bold mb-3">Security Model</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-blue-400 mb-2">Network-Level Security</h4>
+                            <p class="text-gray-400">Gateway VPC Endpoint ensures all S3 traffic remains on the AWS private backbone. Route tables redirect S3-bound traffic automatically to the endpoint.</p>
+                        </div>
+                        
+                        <div class="glass p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-purple-400 mb-2">Service-Level Security</h4>
+                            <p class="text-gray-400">Explicit Deny policy is applied using the aws:sourceVpce condition key. All requests are denied by default, and only requests from the specified VPC endpoint are allowed.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-3">Key Benefits</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>S3 traffic never traverses the public internet</li>
+                        <li>NAT Gateway is not required</li>
+                        <li>All non-endpoint-based access is explicitly denied</li>
+                        <li>Cost-effective solution</li>
+                        <li>Production-grade AWS security pattern</li>
+                    </ul>
+                `
+            }
+        };
+        
+        // Add click event to project cards
+        console.log('Initializing project cards...');
+        const projectCards = document.querySelectorAll('.project-card');
+        console.log('Found project cards:', projectCards.length);
+        
+        projectCards.forEach((card) => {
+            card.addEventListener('click', function(e) {
+                // Don't redirect if clicking on a link
+                if (e.target.tagName === 'A' || e.target.closest('a')) {
+                    console.log('Link clicked, skipping redirect');
+                    return;
+                }
+                
+                const projectId = this.getAttribute('data-project');
+                console.log('Project card clicked:', projectId);
+                
+                if (projectId && projectData[projectId]) {
+                    console.log('Redirecting to:', projectData[projectId].github);
+                    window.open(projectData[projectId].github, '_blank');
+                } else {
+                    console.error('Project not found:', projectId, 'Available:', Object.keys(projectData));
+                }
+            });
+            
+            // Add hover effect to show it's clickable
+            card.style.cursor = 'pointer';
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !projectModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // ===== DARK MODE TOGGLE =====
+        const htmlElement = document.documentElement;
+        const mobileThemeToggle = document.getElementById('theme-toggle');
+        const sidebarThemeToggle = document.getElementById('sidebar-theme-toggle');
+        const THEME_STORAGE_KEY = 'theme-preference';
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme) {
+                applyTheme(savedTheme === 'dark');
+            } else if (prefersDark) {
+                applyTheme(true);
+            }
+        }
+
+        // Apply theme and update UI
+        function applyTheme(isDark) {
+            if (isDark) {
+                htmlElement.classList.add('dark-mode');
+                localStorage.setItem(THEME_STORAGE_KEY, 'dark');
+                updateThemeIcons('sun');
+            } else {
+                htmlElement.classList.remove('dark-mode');
+                localStorage.setItem(THEME_STORAGE_KEY, 'light');
+                updateThemeIcons('moon');
+            }
+        }
+
+        // Update theme toggle button icons
+        function updateThemeIcons(iconName) {
+            const updateIcon = (btn) => {
+                if (btn) {
+                    const icon = btn.querySelector('i[data-lucide]');
+                    if (icon) {
+                        icon.setAttribute('data-lucide', iconName);
+                        lucide.createIcons();
+                    }
+                }
+            };
+            
+            updateIcon(mobileThemeToggle);
+            updateIcon(sidebarThemeToggle);
+
+            // Update button text
+            if (sidebarThemeToggle) {
+                const span = sidebarThemeToggle.querySelector('span');
+                if (span) {
+                    span.textContent = iconName === 'sun' ? 'Light Mode' : 'Dark Mode';
+                }
+            }
+        }
+
+        // Toggle theme
+        function toggleTheme() {
+            const isDark = htmlElement.classList.contains('dark-mode');
+            applyTheme(!isDark);
+        }
+
+        // Event listeners for theme toggle buttons
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', toggleTheme);
+        }
+        if (sidebarThemeToggle) {
+            sidebarThemeToggle.addEventListener('click', toggleTheme);
+        }
+
+        // Initialize theme on page load
+        initTheme();
+    </script>
+</body>
+</html>
