@@ -238,50 +238,6 @@
             color: #7B2DAA;
         }
 
-        /* ===== PROJECT MODAL CONTENT ===== */
-        .project-details-content h3 {
-            color: var(--text-heading);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .project-details-content h4 {
-            color: var(--text-primary);
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-details-content p {
-            color: var(--text-primary);
-            opacity: 0.9;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .project-details-content ul {
-            color: var(--text-primary);
-            opacity: 0.85;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-details-content ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .project-details-content img {
-            border-radius: 0.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .project-details-content .glass {
-            background: var(--bg-secondary);
-            border-color: var(--border-accent);
-        }
-
         /* ===== BUTTONS ===== */
         button,
         .button,
@@ -540,18 +496,18 @@
                     <div class="space-y-3">
                         <div class="flex items-center gap-3">
                             <i data-lucide="mail" class="w-4 h-4 text-purple-600"></i>
-                            <a href="mailto:emaan@example.com"
-                                class="text-sm text-purple-800 hover:text-primary transition">emaan@example.com</a>
+                            <a href="mailto:emaanch673@gmail.com"
+                                class="text-sm text-purple-800 hover:text-primary transition">emaanch673@gmail.com</a>
                         </div>
                         <div class="flex items-center gap-3">
                             <i data-lucide="linkedin" class="w-4 h-4 text-purple-600"></i>
-                            <a href="https://linkedin.com" target="_blank"
-                                class="text-sm text-purple-800 hover:text-primary transition">LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/emaan-chaudhary1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"
+                                class="text-sm text-purple-800 hover:text-primary transition">LinkedIn </a>
                         </div>
                         <div class="flex items-center gap-3">
                             <i data-lucide="github" class="w-4 h-4 text-purple-600"></i>
-                            <a href="https://github.com" target="_blank"
-                                class="text-sm text-purple-800 hover:text-primary transition">GitHub Profile</a>
+                            <a href="https://github.com/Emaan-Chaudhary/" target="_blank"
+                                class="text-sm text-purple-800 hover:text-primary transition">GitHub </a>
                         </div>
                         <div class="flex items-center gap-3">
                             <i data-lucide="twitter" class="w-4 h-4 text-purple-600"></i>
@@ -823,8 +779,8 @@
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Project 1 -->
-                        <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl"
-                            data-project="serverless-form">
+                        <div
+                            class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl">
                             <div
                                 class="h-48 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
                                 <i data-lucide="server" class="w-16 h-16 text-white/50"></i>
@@ -843,23 +799,16 @@
                                     <span
                                         class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-medium">DynamoDB</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a href="https://github.com/Emaan-Chaudhary/aws-serverless-form-app" target="_blank"
-                                        class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
-                                        <i data-lucide="github" class="w-4 h-4"></i>
-                                        <span>Code</span>
-                                    </a>
-                                </div>
                             </div>
-                            <div
+                            <a href="https://github.com/Emaan-Chaudhary/aws-serverless-form-app" target="_blank"
                                 class="project-overlay absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
                                 <span class="text-white font-semibold">View on GitHub →</span>
-                            </div>
+                            </a>
                         </div>
 
                         <!-- Project 2 -->
-                        <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl"
-                            data-project="three-tier">
+                        <div
+                            class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl">
                             <div
                                 class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
                                 <i data-lucide="layers" class="w-16 h-16 text-white/50"></i>
@@ -877,23 +826,16 @@
                                     <span
                                         class="px-3 py-1 bg-orange-500/20 text-orange-600 text-xs rounded-full font-medium">Lambda</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a href="https://github.com/Emaan-Chaudhary/aws-three-tier-web-app" target="_blank"
-                                        class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
-                                        <i data-lucide="github" class="w-4 h-4"></i>
-                                        <span>Code</span>
-                                    </a>
-                                </div>
                             </div>
-                            <div
+                            <a href="https://github.com/Emaan-Chaudhary/aws-three-tier-web-app" target="_blank"
                                 class="project-overlay absolute inset-0 bg-orange-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
                                 <span class="text-white font-semibold">View on GitHub →</span>
-                            </div>
+                            </a>
                         </div>
 
                         <!-- Project 3 -->
-                        <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl"
-                            data-project="auto-scaling">
+                        <div
+                            class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl">
                             <div
                                 class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
                                 <i data-lucide="trending-up" class="w-16 h-16 text-white/50"></i>
@@ -911,24 +853,17 @@
                                     <span
                                         class="px-3 py-1 bg-green-500/20 text-green-600 text-xs rounded-full font-medium">CloudWatch</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a href="https://github.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app"
-                                        target="_blank"
-                                        class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
-                                        <i data-lucide="github" class="w-4 h-4"></i>
-                                        <span>Code</span>
-                                    </a>
-                                </div>
                             </div>
-                            <div
+                            <a href="https://github.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app"
+                                target="_blank"
                                 class="project-overlay absolute inset-0 bg-green-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
                                 <span class="text-white font-semibold">View on GitHub →</span>
-                            </div>
+                            </a>
                         </div>
 
                         <!-- Project 4 -->
-                        <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl"
-                            data-project="vpc-peering">
+                        <div
+                            class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl">
                             <div
                                 class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
                                 <i data-lucide="network" class="w-16 h-16 text-white/50"></i>
@@ -947,24 +882,17 @@
                                     <span
                                         class="px-3 py-1 bg-purple-500/20 text-purple-600 text-xs rounded-full font-medium">Networking</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a href="https://github.com/Emaan-Chaudhary/aws-same-region-vpc-peering"
-                                        target="_blank"
-                                        class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
-                                        <i data-lucide="github" class="w-4 h-4"></i>
-                                        <span>Code</span>
-                                    </a>
-                                </div>
                             </div>
-                            <div
+                            <a href="https://github.com/Emaan-Chaudhary/aws-same-region-vpc-peering"
+                                target="_blank"
                                 class="project-overlay absolute inset-0 bg-purple-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
                                 <span class="text-white font-semibold">View on GitHub →</span>
-                            </div>
+                            </a>
                         </div>
 
                         <!-- Project 5 -->
-                        <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl"
-                            data-project="cicd-pipeline">
+                        <div
+                            class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl">
                             <div
                                 class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
                                 <i data-lucide="git-branch" class="w-16 h-16 text-white/50"></i>
@@ -981,23 +909,18 @@
                                     <span
                                         class="px-3 py-1 bg-cyan-500/20 text-cyan-600 text-xs rounded-full font-medium">CodeDeploy</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a href="https://github.com/Emaan-Chaudhary/aws-java-cicd-pipeline" target="_blank"
-                                        class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
-                                        <i data-lucide="github" class="w-4 h-4"></i>
-                                        <span>Code</span>
-                                    </a>
-                                </div>
                             </div>
-                            <div
-                                class="project-overlay absolute inset-0 bg-cyan-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
-                                <span class="text-white font-semibold">View on GitHub →</span>
-                            </div>
+                             <a href="https://github.com/Emaan-Chaudhary/aws-java-cicd-pipeline"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="project-overlay absolute inset-0 bg-cyan-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer text-white font-semibold text-lg">
+    View on GitHub →
+</a>
                         </div>
 
                         <!-- Project 6 -->
-                        <div class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl"
-                            data-project="s3-vpc">
+                        <div
+                            class="project-card group relative rounded-xl overflow-hidden glass border border-purple-200 hover:shadow-xl">
                             <div
                                 class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
                                 <i data-lucide="shield" class="w-16 h-16 text-white/50"></i>
@@ -1015,18 +938,11 @@
                                         class="px-3 py-1 bg-yellow-500/20 text-yellow-600 text-xs rounded-full font-medium">Gateway
                                         Endpoint</span>
                                 </div>
-                                <div class="flex gap-4">
-                                    <a href="https://github.com/Emaan-Chaudhary/aws-s3-vpc-endpoint" target="_blank"
-                                        class="text-sm text-purple-800 hover:text-primary flex items-center gap-1 font-medium transition">
-                                        <i data-lucide="github" class="w-4 h-4"></i>
-                                        <span>Code</span>
-                                    </a>
-                                </div>
                             </div>
-                            <div
+                            <a href="https://github.com/Emaan-Chaudhary/aws-s3-vpc-endpoint" target="_blank"
                                 class="project-overlay absolute inset-0 bg-yellow-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
                                 <span class="text-white font-semibold">View on GitHub →</span>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1234,27 +1150,6 @@
                 <i data-lucide="chevron-up" class="w-6 h-6 text-white"></i>
             </button>
 
-            <!-- Project Details Modal -->
-            <div id="project-modal"
-                class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 items-center justify-center p-4"
-                style="display: none;">
-                <div class="glass rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto border border-purple-200"
-                    style="background-color: var(--bg-primary);">
-                    <div class="sticky top-0 glass border-b border-purple-200 p-6 flex justify-between items-center"
-                        style="background-color: var(--bg-secondary);">
-                        <h2 id="modal-title" class="text-2xl font-bold" style="color: var(--text-heading);"></h2>
-                        <button id="close-modal"
-                            class="w-10 h-10 rounded-full hover:bg-primary/20 transition-colors flex items-center justify-center"
-                            style="color: var(--text-primary);">
-                            <i data-lucide="x" class="w-6 h-6"></i>
-                        </button>
-                    </div>
-                    <div id="modal-content" class="p-8" style="color: var(--text-primary);">
-                        <!-- Content will be loaded here -->
-                    </div>
-                </div>
-            </div>
-
             <!-- Scripts -->
             <script>
                 // Initialize Lucide Icons
@@ -1384,360 +1279,6 @@
                 document.querySelectorAll('.skill-card, .project-card, .glass').forEach(el => {
                     el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
                     observer.observe(el);
-                });
-
-                // Project Modal Functionality
-                const projectModal = document.getElementById('project-modal');
-                const modalTitle = document.getElementById('modal-title');
-                const modalContent = document.getElementById('modal-content');
-                const closeModalBtn = document.getElementById('close-modal');
-
-                const projectData = {
-                    'serverless-form': {
-                        title: 'Serverless Form Web Application on AWS',
-                        github: 'https://github.com/Emaan-Chaudhary/aws-serverless-form-app',
-                        description: 'A fully serverless web application built on AWS that handles user form submissions and stores the data in DynamoDB.',
-                        architecture: 'https://raw.githubusercontent.com/Emaan-Chaudhary/aws-serverless-form-app/main/images/s1.png',
-                        details: `
-                    <h3 class="text-2xl font-bold mb-4 text-primary">Architecture Overview</h3>
-                    <p class="text-gray-400 mb-6">Flow: API Gateway → Lambda → DynamoDB</p>
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-serverless-form-app/main/images/s1.png" alt="Architecture" class="w-full rounded-lg mb-6">
-                    
-                    <h3 class="text-xl font-bold mb-3">Tech Stack</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
-                        <li>AWS Lambda (Python)</li>
-                        <li>API Gateway</li>
-                        <li>DynamoDB</li>
-                        <li>IAM Roles for secure access</li>
-                    </ul>
-                    
-                    <h3 class="text-xl font-bold mb-3">Key Features</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
-                        <li>Fully serverless architecture</li>
-                        <li>Event-driven, scalable design</li>
-                        <li>Pay-per-use pricing model</li>
-                        <li>No server management required</li>
-                    </ul>
-                    
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-serverless-form-app/main/images/s5.png" alt="Form Page" class="w-full rounded-lg mb-4">
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-serverless-form-app/main/images/s6.png" alt="DynamoDB Data" class="w-full rounded-lg">
-                `
-                    },
-                    'three-tier': {
-                        title: 'Three-Tier Web Application on AWS',
-                        github: 'https://github.com/Emaan-Chaudhary/aws-three-tier-web-app',
-                        description: 'A three-tier web application on AWS with S3 + CloudFront for frontend, Lambda + API Gateway for backend, and DynamoDB as database.',
-                        architecture: 'https://raw.githubusercontent.com/Emaan-Chaudhary/aws-three-tier-web-app/main/architecture/threetier-arc.png',
-                        details: `
-                    <h3 class="text-2xl font-bold mb-4 text-orange-500">Architecture Overview</h3>
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-three-tier-web-app/main/architecture/threetier-arc.png" alt="Architecture" class="w-full rounded-lg mb-6">
-                    
-                    <h3 class="text-xl font-bold mb-3">Architecture Tiers</h3>
-                    <div class="space-y-4 mb-6">
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-blue-400 mb-2">🔹 Presentation Tier</h4>
-                            <ul class="list-disc list-inside text-gray-400">
-                                <li>Amazon S3 – Hosts static website files</li>
-                                <li>Amazon CloudFront – Global CDN for fast content delivery</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-purple-400 mb-2">🔹 Logic Tier</h4>
-                            <ul class="list-disc list-inside text-gray-400">
-                                <li>Amazon API Gateway – Exposes REST APIs</li>
-                                <li>AWS Lambda (Node.js) – Handles business logic</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-green-400 mb-2">🔹 Data Tier</h4>
-                            <ul class="list-disc list-inside text-gray-400">
-                                <li>Amazon DynamoDB – NoSQL database for storing user data</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold mb-3">Key Features</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
-                        <li>Global website delivery using CloudFront</li>
-                        <li>Serverless backend using Lambda</li>
-                        <li>REST API integration with API Gateway</li>
-                        <li>Secure and scalable NoSQL data storage</li>
-                        <li>CORS-enabled API for browser access</li>
-                    </ul>
-                    
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-three-tier-web-app/main/architecture/output2.png" alt="Final Result" class="w-full rounded-lg">
-                `
-                    },
-                    'auto-scaling': {
-                        title: 'Highly Available Web Application using AWS ALB & Auto Scaling',
-                        github: 'https://github.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app',
-                        description: 'AWS architecture showcasing load balancing, auto scaling, private EC2 instances, and monitoring.',
-                        architecture: 'https://raw.githubusercontent.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app/main/architecture/FinalArchitecture.png',
-                        details: `
-                    <h3 class="text-2xl font-bold mb-4 text-green-500">Problem Statement</h3>
-                    <p class="text-gray-400 mb-6">Single EC2 instances are not reliable for production workloads. If the instance fails or traffic spikes, the application becomes unavailable. This project demonstrates how to design a highly available, scalable, and monitored web application on AWS.</p>
-                    
-                    <h3 class="text-xl font-bold mb-3">Architecture Overview</h3>
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app/main/architecture/FinalArchitecture.png" alt="Architecture" class="w-full rounded-lg mb-6">
-                    
-                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
-                        <li>Application Load Balancer exposed to the internet</li>
-                        <li>EC2 instances running in private subnets for security</li>
-                        <li>Auto Scaling Group maintains desired capacity</li>
-                        <li>CloudWatch alarms trigger scale-in and scale-out</li>
-                    </ul>
-                    
-                    <h3 class="text-xl font-bold mb-3">Key Design Decisions</h3>
-                    <div class="space-y-4 mb-6">
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-blue-400 mb-2">Why Load Balancer is in Public Subnets</h4>
-                            <p class="text-gray-400">The ALB must receive traffic from the internet. Private subnets cannot be directly accessed from outside the VPC.</p>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-purple-400 mb-2">Why EC2 Instances are in Private Subnets</h4>
-                            <p class="text-gray-400">To reduce attack surface. Instances are accessed only via the ALB or AWS Systems Manager.</p>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold mb-3">Auto Scaling & Monitoring</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
-                        <li>Target tracking policy based on average CPU utilization (50%)</li>
-                        <li>Scale-out when CPU increases</li>
-                        <li>Scale-in when traffic reduces</li>
-                        <li>CloudWatch alarms automatically created by ASG</li>
-                    </ul>
-                    
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app/main/screenshots/cloudwatch.png" alt="CloudWatch" class="w-full rounded-lg mb-4">
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-load-balanced-auto-scaling-app/main/screenshots/asg.png" alt="Auto Scaling Group" class="w-full rounded-lg">
-                `
-                    },
-                    'vpc-peering': {
-                        title: 'Same Region VPC Peering',
-                        github: 'https://github.com/Emaan-Chaudhary/aws-same-region-vpc-peering',
-                        description: 'AWS VPC Peering implementation enabling private communication between EC2 instances in separate VPCs.',
-                        architecture: 'https://raw.githubusercontent.com/Emaan-Chaudhary/aws-same-region-vpc-peering/main/images/infra.png',
-                        details: `
-                    <h3 class="text-2xl font-bold mb-4 text-purple-500">Project Overview</h3>
-                    <p class="text-gray-400 mb-6">This project demonstrates how to create a VPC Peering connection within the same AWS region and enable private communication between EC2 instances across different VPCs.</p>
-                    
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-same-region-vpc-peering/main/images/infra.png" alt="Architecture" class="w-full rounded-lg mb-6">
-                    
-                    <h3 class="text-xl font-bold mb-3">Architecture Components</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
-                        <li>Two VPCs in the same AWS region (us-east-1)</li>
-                        <li>Separate CIDR blocks</li>
-                        <li>EC2 instances deployed in private subnets</li>
-                        <li>VPC Peering connection established</li>
-                        <li>Route tables updated to allow inter-VPC traffic</li>
-                    </ul>
-                    
-                    <h3 class="text-xl font-bold mb-3">Architecture Summary</h3>
-                    <div class="glass p-4 rounded-lg border border-gray-700 mb-6">
-                        <table class="w-full text-gray-400 text-sm">
-                            <tr><td class="py-1 font-semibold">VPC-1A CIDR:</td><td>10.75.0.0/16</td></tr>
-                            <tr><td class="py-1 font-semibold">VPC-1B CIDR:</td><td>192.168.0.0/16</td></tr>
-                            <tr><td class="py-1 font-semibold">Region:</td><td>us-east-1</td></tr>
-                        </table>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold mb-3">Implementation Steps</h3>
-                    <div class="space-y-4 mb-6">
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-blue-400 mb-2">1️⃣ Create VPC-1A</h4>
-                            <p class="text-gray-400 text-sm">Region: us-east-1 | CIDR: 10.75.0.0/16 | 1 Public + 1 Private subnet | NAT Gateway enabled</p>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-purple-400 mb-2">2️⃣ Create VPC-1B</h4>
-                            <p class="text-gray-400 text-sm">Region: us-east-1 | CIDR: 192.168.0.0/16 | 1 Public + 1 Private subnet | NAT Gateway enabled</p>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-green-400 mb-2">3️⃣ Launch EC2 Instances</h4>
-                            <p class="text-gray-400 text-sm">Jump Server in VPC-1A public subnet | Private EC2 instances in both VPCs</p>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-yellow-400 mb-2">4️⃣ Test Connectivity (Before Peering)</h4>
-                            <p class="text-gray-400 text-sm">Ping Private-EC2-1a ✅ | Ping Private-EC2-1b ❌ (No routing)</p>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-pink-400 mb-2">5️⃣ Create VPC Peering Connection</h4>
-                            <p class="text-gray-400 text-sm">Requester: VPC-1A | Accepter: VPC-1B | Accept peering request</p>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-cyan-400 mb-2">6️⃣ Update Route Tables</h4>
-                            <p class="text-gray-400 text-sm">Add routes pointing to VPC Peering connection in both VPCs</p>
-                        </div>
-                    </div>
-                    
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-same-region-vpc-peering/main/images/vpc-peering.png" alt="VPC Peering" class="w-full rounded-lg mb-4">
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-same-region-vpc-peering/main/images/result.png" alt="Result" class="w-full rounded-lg mb-6">
-                    
-                    <h3 class="text-xl font-bold mb-3">✅ Result</h3>
-                    <p class="text-gray-400 mb-6">The two VPCs can now communicate privately over AWS's internal network without using the internet.</p>
-                    
-                    <h3 class="text-xl font-bold mb-3">⚠️ Important Notes</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
-                        <li>VPC Peering does not support transitive routing</li>
-                        <li>CIDR blocks must not overlap</li>
-                        <li>Security groups and NACLs must allow traffic</li>
-                        <li>DNS resolution between VPCs requires additional configuration</li>
-                    </ul>
-                    
-                    <h3 class="text-xl font-bold mb-3">📚 Learning Outcome</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2">
-                        <li>Understand VPC Peering architecture</li>
-                        <li>Configure routing between isolated networks</li>
-                        <li>Debug network connectivity issues in AWS</li>
-                    </ul>
-                `
-                    },
-                    'cicd-pipeline': {
-                        title: 'Automated Java Web Application Deployment using AWS CI/CD',
-                        github: 'https://github.com/Emaan-Chaudhary/aws-java-cicd-pipeline',
-                        description: 'Fully automated CI/CD pipeline for a Java web application using AWS Developer Tools.',
-                        architecture: 'https://github.com/Emaan-Chaudhary/nextwork-web-project/blob/master/images/0.png?raw=true',
-                        details: `
-                    <h3 class="text-2xl font-bold mb-4 text-cyan-500">Project Overview</h3>
-                    <p class="text-gray-400 mb-6">End-to-end deployment workflow where source code is fetched from GitHub, built using AWS CodeBuild, stored in Amazon S3, and deployed to an EC2 web server using AWS CodeDeploy. Infrastructure provisioning is handled using AWS CloudFormation.</p>
-                    
-                    <img src="https://github.com/Emaan-Chaudhary/nextwork-web-project/blob/master/images/0.png?raw=true" alt="Architecture" class="w-full rounded-lg mb-6">
-                    
-                    <h3 class="text-xl font-bold mb-3">AWS Services Used</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
-                        <li>GitHub – Source code repository</li>
-                        <li>AWS CodePipeline – Orchestrates the CI/CD workflow</li>
-                        <li>AWS CodeBuild – Builds the Java application</li>
-                        <li>AWS CodeDeploy – Deploys the application to EC2</li>
-                        <li>Amazon S3 – Stores build artifacts</li>
-                        <li>AWS CloudFormation – Infrastructure as Code</li>
-                        <li>Amazon EC2 – Hosts the Java web application</li>
-                    </ul>
-                    
-                    <h3 class="text-xl font-bold mb-3">CI/CD Pipeline Flow</h3>
-                    <ol class="list-decimal list-inside text-gray-400 space-y-2 mb-6">
-                        <li>Code is pushed to the GitHub repository</li>
-                        <li>AWS CodePipeline is automatically triggered</li>
-                        <li>CodeBuild compiles and packages the Java application</li>
-                        <li>Build artifacts are stored in an S3 bucket</li>
-                        <li>CodeDeploy deploys the application to an EC2 instance</li>
-                        <li>Application becomes live on the web server</li>
-                    </ol>
-                    
-                    <img src="https://github.com/Emaan-Chaudhary/nextwork-web-project/blob/master/images/2.png?raw=true" alt="Pipeline Flow" class="w-full rounded-lg mb-4">
-                    
-                    <h3 class="text-xl font-bold mb-3">Key Features</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2">
-                        <li>Fully automated build and deployment</li>
-                        <li>No manual intervention required</li>
-                        <li>Infrastructure created using CloudFormation</li>
-                        <li>CI/CD triggered on code push</li>
-                        <li>Production-ready deployment workflow</li>
-                    </ul>
-                `
-                    },
-                    's3-vpc': {
-                        title: 'Secure Private Access to Amazon S3 Using VPC Endpoint',
-                        github: 'https://github.com/Emaan-Chaudhary/aws-s3-vpc-endpoint',
-                        description: 'Secure, private access to Amazon S3 using a Gateway VPC Endpoint, eliminating public internet exposure.',
-                        architecture: 'https://raw.githubusercontent.com/Emaan-Chaudhary/aws-s3-vpc-endpoint/main/screenshots/endpoint-arc.png',
-                        details: `
-                    <h3 class="text-2xl font-bold mb-4 text-yellow-500">Problem Statement</h3>
-                    <p class="text-gray-400 mb-6">In many AWS architectures, private workloads need access to S3. The default approach routes traffic through the public internet using an Internet Gateway or NAT Gateway, which introduces unnecessary internet exposure, higher costs, and weaker security boundaries.</p>
-                    
-                    <h3 class="text-xl font-bold mb-3">Solution Overview</h3>
-                    <p class="text-gray-400 mb-6">Uses an Amazon S3 Gateway VPC Endpoint to provide private, direct connectivity between a VPC and Amazon S3. Access to the S3 bucket is further restricted using a bucket policy that only allows requests originating from the specific VPC endpoint.</p>
-                    
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-s3-vpc-endpoint/main/screenshots/endpoint-arc.png" alt="Architecture" class="w-full rounded-lg mb-6">
-                    
-                    <h3 class="text-xl font-bold mb-3">Architecture Components</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">
-                        <li>Custom Amazon VPC</li>
-                        <li>Public Subnet (single Availability Zone)</li>
-                        <li>EC2 instance running Amazon Linux</li>
-                        <li>Amazon S3 bucket</li>
-                        <li>S3 Gateway VPC Endpoint</li>
-                        <li>Route table–based S3 routing</li>
-                        <li>Restrictive S3 bucket policy</li>
-                    </ul>
-                    
-                    <h3 class="text-xl font-bold mb-3">Traffic Flow</h3>
-                    <div class="glass p-4 rounded-lg border border-gray-700 mb-6">
-                        <pre class="text-gray-400">EC2 Instance
-   ↓
-VPC Route Table (S3 Prefix List)
-   ↓
-S3 Gateway VPC Endpoint
-   ↓
-Amazon S3</pre>
-                    </div>
-                    
-                    <img src="https://raw.githubusercontent.com/Emaan-Chaudhary/aws-s3-vpc-endpoint/main/screenshots/vpc.png" alt="VPC" class="w-full rounded-lg mb-4">
-                    
-                    <h3 class="text-xl font-bold mb-3">Security Model</h3>
-                    <div class="space-y-4 mb-6">
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-blue-400 mb-2">Network-Level Security</h4>
-                            <p class="text-gray-400">Gateway VPC Endpoint ensures all S3 traffic remains on the AWS private backbone. Route tables redirect S3-bound traffic automatically to the endpoint.</p>
-                        </div>
-                        
-                        <div class="glass p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-purple-400 mb-2">Service-Level Security</h4>
-                            <p class="text-gray-400">Explicit Deny policy is applied using the aws:sourceVpce condition key. All requests are denied by default, and only requests from the specified VPC endpoint are allowed.</p>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold mb-3">Key Benefits</h3>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2">
-                        <li>S3 traffic never traverses the public internet</li>
-                        <li>NAT Gateway is not required</li>
-                        <li>All non-endpoint-based access is explicitly denied</li>
-                        <li>Cost-effective solution</li>
-                        <li>Production-grade AWS security pattern</li>
-                    </ul>
-                `
-                    }
-                };
-
-                // Add click event to project cards
-                console.log('Initializing project cards...');
-                const projectCards = document.querySelectorAll('.project-card');
-                console.log('Found project cards:', projectCards.length);
-
-                projectCards.forEach((card) => {
-                    card.addEventListener('click', function (e) {
-                        // Don't redirect if clicking on a link
-                        if (e.target.tagName === 'A' || e.target.closest('a')) {
-                            console.log('Link clicked, skipping redirect');
-                            return;
-                        }
-
-                        const projectId = this.getAttribute('data-project');
-                        console.log('Project card clicked:', projectId);
-
-                        if (projectId && projectData[projectId]) {
-                            console.log('Redirecting to:', projectData[projectId].github);
-                            window.open(projectData[projectId].github, '_blank');
-                        } else {
-                            console.error('Project not found:', projectId, 'Available:', Object.keys(projectData));
-                        }
-                    });
-
-                    // Add hover effect to show it's clickable
-                    card.style.cursor = 'pointer';
-                });
-
-                // Close modal with Escape key
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && !projectModal.classList.contains('hidden')) {
-                        closeModal();
-                    }
                 });
 
                 // ===== DARK MODE TOGGLE =====
