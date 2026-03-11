@@ -26,5 +26,5 @@ jobs:
 
       # 6️⃣ Deploy build folder to S3
       - name: Deploy to S3
-        run: aws s3 sync  s3://emaan-site --delete 
+        run: aws s3  sync . s3://emaan-site --delete 
 
