@@ -1556,7 +1556,7 @@ Aspiring Cloud & DevOps Engineer building hands-on infrastructure projects.
                 const sidebar = document.getElementById('sidebar');
                 const sidebarToggle = document.getElementById('sidebar-toggle');
                 const sidebarOverlay = document.getElementById('sidebar-overlay');
-                const mobileNavBreakpoint = 767.98;
+                const mobileNavBreakpoint = 768;
                 let sidebarHistoryPushed = false;
 
                 function isMobileNav() {
@@ -1635,6 +1635,9 @@ Aspiring Cloud & DevOps Engineer building hands-on infrastructure projects.
 
                 window.addEventListener('resize', syncSidebarOnResize);
                 syncSidebarOnResize();
+                if (isMobileNav()) {
+                    openSidebar();
+                }
 
                 // Back to Top Button
                 const backToTopBtn = document.getElementById('back-to-top');
