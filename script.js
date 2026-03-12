@@ -20,16 +20,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!sidebar || !toggleBtn || !overlay) return;
 
+    let sidebarHistoryPushed = false;
+
     const openSidebar = () => {
         sidebar.classList.remove('-translate-x-full');
         overlay.classList.remove('hidden');
         toggleBtn.setAttribute('aria-expanded', 'true');
+        if (!sidebarHistoryPushed) {
+            history.pushState({ sidebarOpen: true }, '');
+            sidebarHistoryPushed = true;
+        }
     };
 
-    const closeSidebar = () => {
+    const closeSidebar = (fromPopstate = false) => {
         sidebar.classList.add('-translate-x-full');
         overlay.classList.add('hidden');
         toggleBtn.setAttribute('aria-expanded', 'false');
+        if (sidebarHistoryPushed && !fromPopstate) {
+            sidebarHistoryPushed = false;
+            history.back();
+        } else {
+            sidebarHistoryPushed = false;
+        }
     };
 
     toggleBtn.addEventListener('click', () => {
@@ -40,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    overlay.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', () => closeSidebar());
 
     document.querySelectorAll('#sidebar a[href^="#"]').forEach(link => {
         link.addEventListener('click', () => {
@@ -48,6 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeSidebar();
             }
         });
+    });
+
+    window.addEventListener('popstate', () => {
+        const isOpen = !sidebar.classList.contains('-translate-x-full');
+        if (isOpen && window.innerWidth < 768) {
+            closeSidebar(true);
+        }
     });
 
     window.addEventListener('resize', () => {

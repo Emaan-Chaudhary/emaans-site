@@ -1258,9 +1258,9 @@ Aspiring Cloud & DevOps Engineer building hands-on infrastructure projects.
                             </div>
                              <a href="https://github.com/Emaan-Chaudhary/aws-java-cicd-pipeline"
    target="_blank"
-   rel="noopener noreferrer"
-   class="project-overlay absolute inset-0 bg-cyan-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer text-white font-semibold text-lg">
-    View on GitHub →
+   class="project-overlay absolute inset-0 bg-purple-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+                                <span class="text-white font-semibold">View on GitHub →</span>
+ 
 </a>
                         </div>
 
@@ -1557,6 +1557,7 @@ Aspiring Cloud & DevOps Engineer building hands-on infrastructure projects.
                 const sidebarToggle = document.getElementById('sidebar-toggle');
                 const sidebarOverlay = document.getElementById('sidebar-overlay');
                 const mobileNavBreakpoint = 767.98;
+                let sidebarHistoryPushed = false;
 
                 function isMobileNav() {
                     return window.innerWidth <= mobileNavBreakpoint;
@@ -1568,15 +1569,32 @@ Aspiring Cloud & DevOps Engineer building hands-on infrastructure projects.
                     sidebarOverlay.classList.remove('hidden');
                     document.body.classList.add('overflow-hidden');
                     if (sidebarToggle) sidebarToggle.setAttribute('aria-expanded', 'true');
+                    if (!sidebarHistoryPushed) {
+                        history.pushState({ sidebarOpen: true }, '');
+                        sidebarHistoryPushed = true;
+                    }
                 }
 
-                function closeSidebar() {
+                function closeSidebar(fromPopstate = false) {
                     if (!sidebar || !sidebarOverlay) return;
                     sidebar.classList.add('-translate-x-full');
                     sidebarOverlay.classList.add('hidden');
                     document.body.classList.remove('overflow-hidden');
                     if (sidebarToggle) sidebarToggle.setAttribute('aria-expanded', 'false');
+                    if (sidebarHistoryPushed && !fromPopstate) {
+                        sidebarHistoryPushed = false;
+                        history.back();
+                    } else {
+                        sidebarHistoryPushed = false;
+                    }
                 }
+
+                window.addEventListener('popstate', () => {
+                    const isOpen = sidebar && !sidebar.classList.contains('-translate-x-full');
+                    if (isOpen && isMobileNav()) {
+                        closeSidebar(true);
+                    }
+                });
 
                 function syncSidebarOnResize() {
                     if (!sidebar) return;
@@ -1610,7 +1628,7 @@ Aspiring Cloud & DevOps Engineer building hands-on infrastructure projects.
                 document.querySelectorAll('#sidebar a[href^="#"]').forEach(link => {
                     link.addEventListener('click', () => {
                         if (isMobileNav()) {
-                            closeSidebar();
+                            closeSidebar(false);
                         }
                     });
                 });
