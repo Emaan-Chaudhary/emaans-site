@@ -159,36 +159,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Dark Mode Toggle
-function toggleDarkMode() {
-    document.documentElement.classList.toggle('dark-mode');
-    const isDark = document.documentElement.classList.contains('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    // Update icon in all toggle buttons
-    document.querySelectorAll('#theme-toggle i, #sidebar-theme-toggle i').forEach(icon => {
-        icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
-    });
-    lucide.createIcons();
-}
-
-const themeToggle = document.getElementById('theme-toggle');
-if (themeToggle) {
-    themeToggle.addEventListener('click', toggleDarkMode);
-}
-
-const sidebarThemeToggle = document.getElementById('sidebar-theme-toggle');
-if (sidebarThemeToggle) {
-    sidebarThemeToggle.addEventListener('click', toggleDarkMode);
-}
-
-// Check for saved theme preference
-if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark-mode');
-    document.querySelectorAll('#theme-toggle i, #sidebar-theme-toggle i').forEach(icon => {
-        icon.setAttribute('data-lucide', 'sun');
-    });
-}
-
 // Form Validation Enhancements
 const forms = document.querySelectorAll('form');
 forms.forEach(form => {
