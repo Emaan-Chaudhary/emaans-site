@@ -654,13 +654,23 @@
         }
 
         /* ===== <= 768px (SMALL TABLETS) ===== */
-        @media (max-width: 768px) {
+        @media (max-width: 767.98px) {
             .min-h-screen.flex {
                 display: block;
             }
 
+            #mobile-header,
             header.md\:hidden {
-                display: block;
+                display: block !important;
+            }
+
+            #sidebar-toggle,
+            #theme-toggle {
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+                min-width: 2.5rem;
+                min-height: 2.5rem;
             }
 
             #sidebar {
@@ -795,7 +805,7 @@
     <div id="scroll-progress" aria-hidden="true"></div>
     <div class="min-h-screen flex md:gap-8">
         <!-- Mobile Header -->
-        <header
+        <header id="mobile-header"
             class="md:hidden fixed top-0 left-0 right-0 z-50 bg-darker backdrop-blur border-b border-purple-200 shadow-sm">
             <div class="flex items-center justify-between px-4 py-3">
                 <a href="#home" class="flex items-center gap-2 text-purple-900 font-mono font-bold">
@@ -1563,7 +1573,7 @@ Aspiring Cloud & DevOps Engineer building hands-on infrastructure projects.
                 const sidebar = document.getElementById('sidebar');
                 const sidebarToggle = document.getElementById('sidebar-toggle');
                 const sidebarOverlay = document.getElementById('sidebar-overlay');
-                const mobileNavBreakpoint = 768;
+                const mobileNavBreakpoint = 767.98;
 
                 function isMobileNav() {
                     return window.innerWidth <= mobileNavBreakpoint;
